@@ -28,3 +28,35 @@ Route::put('article','ArticleController@store');
 
 Route::delete('article/{id}','ArticleController@destroy');
 
+
+
+//Resource Controller..
+Route::apiResource('/products','ProductController');
+
+//Route grouping for reviews
+
+Route::group(['prefix'=>'products'], function(){
+
+	Route::apiResource('/{product}/reviews','ReviewController');
+});
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
